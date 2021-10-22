@@ -3,6 +3,10 @@ const usersResolver = {
         userByUserId: (_, {userId}, { dataSources}) =>{
             return dataSources.projectInvAPI.userByUserId(userId)
         },
+
+        users: (_, { }, {dataSources}) =>{
+            return dataSources.projectInvAPI.users()
+        },
     },
     Mutation: {}
 };

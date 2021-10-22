@@ -10,6 +10,9 @@ const usersTypeDefs = gql `
     type Query {
         userByUserId(userId: String): User
     }
+    extend type Query {
+        users: [User]
+    }
 `;
 
 module.exports = usersTypeDefs;

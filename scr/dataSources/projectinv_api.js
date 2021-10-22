@@ -12,6 +12,10 @@ class ProjectInvAPI extends RESTDataSource {
         return await this.get(`/participantes/${userId}`);
     }
 
+    async users(){
+        return await this.get(`/participantes/`);
+    }
+
     async createProject(project) {
         project = new Object(JSON.parse(JSON.stringify(project)));
         return await this.post('proyecto', project);
@@ -19,6 +23,14 @@ class ProjectInvAPI extends RESTDataSource {
 
     async projectByIdUser(userId){
         return await this.get(`/proyectos/${userId}`);
+    }
+
+    async projects(){
+        return await this.get(`/proyectos/`);
+    }
+
+    async projectById(projectId){
+        return await this.get(`/proyecto/${projectId}`);
     }
 }
 

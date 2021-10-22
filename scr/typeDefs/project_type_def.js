@@ -18,6 +18,13 @@ const projectTypeDefs = gql `
         projectByIdUser(userId: String!): [Project]
     }
 
+    extend type Query {
+        projectById(projectId: String!): Project
+    }
+    extend type Query {
+        projects: [Project]
+    }
+
     type Mutation {
         createProject(project: ProjectInput!): Project
     }
